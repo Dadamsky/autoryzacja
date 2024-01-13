@@ -1,6 +1,29 @@
 ﻿@{
     ViewData["Title"] = "Zdjęcia";
 }
+<link rel="stylesheet" href="~/css/index-style.css" />
 <h1>@ViewData["Title"]</h1>
 
-<p>Zdjęcia poniżej</p>
+
+
+<div class="car-gallery">
+    <div class="car-item">
+        <img src="~/images/audi-rs3.png" alt="Audi RS3">
+        <p>Audi RS3</p>
+    </div>
+    <div class="car-item">
+        <img src="~/images/bmw.jpg" alt="BMW 3">
+        <p>BMW 3</p>
+    </div>
+    <div class="car-item">
+        <img src="~/images/merc.jpg" alt="Mercedes-Benz C-Class">
+        <p>Mercedes-Benz C-Class</p>
+    </div>
+    
+</div>
+
+<div>
+    <a class="MainSite" asp-area="" asp-controller="Home" asp-action="Index">Strona główna</a>
+</div>
+
+

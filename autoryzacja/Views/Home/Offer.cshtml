@@ -3,22 +3,20 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Strona zawiera ofertę samochodów</p>
+<p>Konfiguracja</p>
 
-@foreach (var auto in Model.Auta)
-{
+
+
     <div>
-        <h2>@auto.Marka @auto.Model</h2>
-        <p>Cena: @auto.Cena</p>
-        <!-- Formularz rezerwacji -->
-        <form method="post" action="/Rezerwacje/Rezerwuj">
-            <input type="hidden" name="IdPojazdu" value="@auto.Id" />
-            <label for="data">Data odbioru:</label>
-            <input type="date" name="pickupDate" required />
-            <label for="data">Data zwrotu:</label>
-            <input type="date" name="returnDate" required />
-            <!-- Możesz dodać więcej pól, jeśli są potrzebne -->
-            <input type="submit" value="Rezerwuj" />
-        </form>
+    <a href="@Url.Action("Create", "CarReservations")">
+        <input type="button" value="Rezerwacja" />
+    </a>
+
+    <a href="@Url.Action("Index", "CarReservations")">
+        <input type="button" value="Wszyskto" />
+    </a>
+
+    
+
     </div>
-}
+

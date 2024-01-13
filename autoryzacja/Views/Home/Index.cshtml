@@ -1,16 +1,19 @@
 ﻿@{
-    ViewData["Title"] = "Car Rental - Home Page";
+    ViewData["Title"] = "Wypożyczalnia Samochodów - Strona Główna";
 }
-<link rel="stylesheet" href="~/css/index-style.css" />
 
 <div class="text-center">
-    <h1 class="display-4">Welcome to Our Car Rental Service</h1>
-    <p>Your go-to solution for all your car rental needs. Explore our wide range of vehicles and book your ride today!</p>
-    <img src="../images/audi-rs3.png" alt="Featured Car" style="width: 60%; height: auto;">
+    <h1 class="display-4">Witaj w Naszej Wypożyczalni Samochodów</h1>
+    <p>Twoje miejsce docelowe dla wszystkich potrzeb związanych z wynajmem aut. Odkryj naszą szeroką gamę pojazdów i zarezerwuj swoją przejażdżkę już dziś!</p>
 
-    <div class="links">
-        <a href="/cars">Browse Cars</a> |
-        <a href="/booking">Make a Reservation</a> |
-        <a href="/contact">Contact Us</a>
+    <h1>Samochód Dnia</h1>
+    <p><h3>Audi RS3 Sportback!</h3></p>
+    <img src="../images/audi-rs3.png" alt="Polecany Samochód" style="width: 60%; height: auto; border: 5px solid #007bff; border-radius: 10px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
+
+
+    <div class="links" style="margin-top: 1%;">
+        <a class="sitelinks" href="@Url.Action("Images", "Home")">Przeglądaj Samochody</a>
+        <a class="sitelinks" href="@Url.Action("Create", "CarReservations")">Rezerwuj</a> 
+        <a class="sitelinks" href="@Url.Action("Contact", "Home")">Kontakt</a>
     </div>
 </div>

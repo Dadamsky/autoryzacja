@@ -1,6 +1,9 @@
 ﻿using autoryzacja.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using autoryzacja.Views;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 
 namespace autoryzacja.Controllers
@@ -18,16 +21,41 @@ namespace autoryzacja.Controllers
         {
             return View();
         }
-        
-        public IActionResult Offer()
+
+        public IActionResult Contact()
         {
             return View();
         }
+
+        //return View("~/Views/CarReservations/Create.cshtml");
+
+        [Authorize]
+        public IActionResult Create()
+        {
+                return View("~/Views/CarReservations/Create.cshtml");
+           
+        }
+
+
 
         public IActionResult Images()
         {
             return View();
         }
+        [Authorize]
+        public IActionResult Offer()
+        {
+            if (User.Identity.IsAuthenticated && User.Identity.Name == "admin@admin.pl")
+            {
+                return View();
+            }
+            else
+            {
+                return Unauthorized(); // Or redirect to a different view or action
+            }
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
