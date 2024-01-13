@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using autoryzacja.Models;
 
 namespace autoryzacja.Areas.Identity.Data;
 
@@ -12,6 +13,8 @@ public class ApplicationDBContext : IdentityDbContext<ApplicationUser>
         : base(options)
     {
     }
+
+    public DbSet<CarReservation> CarReservations { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

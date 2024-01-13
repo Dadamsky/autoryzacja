@@ -19,7 +19,12 @@ namespace autoryzacja.Controllers
             return View();
         }
         
-        public IActionResult Privacy()
+        public IActionResult Offer()
+        {
+            return View();
+        }
+
+        public IActionResult Images()
         {
             return View();
         }

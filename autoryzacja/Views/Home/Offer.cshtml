@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Oferta aut";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Strona zawiera ofertę samochodów</p>
+
+@foreach (var auto in Model.Auta)
+{
+    <div>
+        <h2>@auto.Marka @auto.Model</h2>
+        <p>Cena: @auto.Cena</p>
+        <!-- Formularz rezerwacji -->
+        <form method="post" action="/Rezerwacje/Rezerwuj">
+            <input type="hidden" name="IdPojazdu" value="@auto.Id" />
+            <label for="data">Data odbioru:</label>
+            <input type="date" name="pickupDate" required />
+            <label for="data">Data zwrotu:</label>
+            <input type="date" name="returnDate" required />
+            <!-- Możesz dodać więcej pól, jeśli są potrzebne -->
+            <input type="submit" value="Rezerwuj" />
+        </form>
+    </div>
+}
