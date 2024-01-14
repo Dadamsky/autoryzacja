@@ -1,22 +1,19 @@
 ﻿@{
-    ViewData["Title"] = "Oferta aut";
+    ViewData["Title"] = "Panel Administracyjny";
 }
+
 <h1>@ViewData["Title"]</h1>
 
-<p>Konfiguracja</p>
-
-
+<div class="adminCenter">
+    <p>Konfiguracja</p>
 
     <div>
-    <a href="@Url.Action("Create", "CarReservations")">
-        <input type="button" value="Rezerwacja" />
-    </a>
+        <a href="@Url.Action("Create", "CarReservations")">
+            <button class="adminButton">Rezerwacja</button>
+        </a>
 
-    <a href="@Url.Action("Index", "CarReservations")">
-        <input type="button" value="Wszyskto" />
-    </a>
-
-    
-
+        <a href="@Url.Action("Index", "CarReservations")">
+            <button class="adminButton">Wszystkie Rezerwacje</button>
+        </a>
     </div>
-
+</div>

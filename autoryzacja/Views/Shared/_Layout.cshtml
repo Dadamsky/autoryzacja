@@ -31,9 +31,17 @@
                             }
 
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link adminbttn" asp-area="" asp-controller="Home" asp-action="Images">Zdjecia</a>
-                        </li>
+                        
+                        @if (User.Identity.IsAuthenticated)
+                            {
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Index", "CarReservations")">
+                                        <button class="adminbttn">Wszystkie Rezerwacje</button>
+                                    </a>
+                                </li>
+                            }
+
+                        
                     </ul>
                 </div>
                 <partial name="_LoginPartial" />

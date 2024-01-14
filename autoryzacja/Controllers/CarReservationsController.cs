@@ -19,7 +19,7 @@ namespace autoryzacja.Controllers
         {
             _context = context;
         }
-
+        [Authorize]
         // GET: CarReservations
         public async Task<IActionResult> Index()
         {
@@ -83,10 +83,11 @@ namespace autoryzacja.Controllers
                     return View(carReservation);
                 }
 
-                
+
                 _context.Add(carReservation);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                ViewBag.SuccessMessage = "Pomyślnie zarezerwowano samochód!";
+                return View(carReservation);
             }
 
             

@@ -128,5 +128,27 @@ body {
         color: #777;
     }
 
+.adminCenter {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.adminButton {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+    .adminButton:hover {
+        background-color: #0056b3;
+    }
 
 
